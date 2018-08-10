@@ -1,7 +1,7 @@
 import java.util.Arrays;
 
-public class Code_05_SmallSum {
-    public static int smallSum(int[] arr) {
+public class Code_06_InversePairs {
+    public static int inversePairs(int[] arr) {
         if (arr == null || arr.length < 2) {
             return 0;
         }
@@ -22,10 +22,10 @@ public class Code_05_SmallSum {
         int i = 0;
         int p1 = left;
         int p2 = middle + 1;
-        int res = 0;
-        while (p1 <= middle && p2 <= right) {
-            res += arr[p1] < arr[p2] ? (right - p2 + 1) * arr[p1] : 0; // 计算每次分治后的最小和
-            help[i++] = arr[p1] < arr[p2] ? arr[p1++] : arr[p2++];
+        int count = 0;
+        while (p1 <= middle && p2 <= right) {                // 1 2 3 2 4
+            count += arr[p1] > arr[p2] ? (middle - p1 + 1) : 0;
+            help[i++] = arr[p1] <= arr[p2] ? arr[p1++] : arr[p2++];
         }
         while (p1 <= middle) {
             help[i++] = arr[p1++];
@@ -36,7 +36,7 @@ public class Code_05_SmallSum {
         for (i = 0; i < help.length; i++) {
             arr[left + i] = help[i];
         }
-        return res;
+        return count;
     }
 
     public static void main(String[] args) {
@@ -48,10 +48,8 @@ public class Code_05_SmallSum {
         for (int i = 0; i < testTime; i++) {
             int[] arr1 = generateRandomArray(maxSize, maxValue);
             int[] arr2 = Arrays.copyOf(arr1, arr1.length);
-            if (smallSum(arr1) != comparator(arr2)) {
+            if (inversePairs(arr1) != comparator(arr2)) {
                 succeed = false;
-                System.out.println(Arrays.toString(arr1));
-                System.out.println(Arrays.toString(arr2));
                 break;
             }
         }
@@ -59,7 +57,8 @@ public class Code_05_SmallSum {
 
         int[] arr = generateRandomArray(maxSize, maxValue);
         System.out.println(Arrays.toString(arr));
-        System.out.println(smallSum(arr));
+        System.out.println(comparator(arr));
+        System.out.println(inversePairs(arr));
     }
 
 
@@ -68,13 +67,13 @@ public class Code_05_SmallSum {
         if (arr == null) {
             return 0;
         }
-        int res = 0;
-        for (int i = 1; i < arr.length; i++) {
-            for (int j = 0; j < i; j++) {
-                res += arr[j] < arr[i] ? arr[j] : 0;
+        int count = 0;
+        for (int i = 0; i < arr.length - 1; i++) {
+            for (int j = i + 1; j < arr.length; j++) {
+                count += arr[i] > arr[j] ? 1 : 0;
             }
         }
-        return res;
+        return count;
     }
 
     // for test

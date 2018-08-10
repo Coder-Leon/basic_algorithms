@@ -38,7 +38,7 @@ public class Code_03_InsertSort {
         }
         System.out.println(succeed ? "Bingo!!!" : "Shit!!!");
 
-        int arr[] = generateRandomArray(maxSize, maxValue);
+        int[] arr = generateRandomArray(maxSize, maxValue);
         System.out.println(Arrays.toString(arr));
         insertSort(arr);
         System.out.println(Arrays.toString(arr));

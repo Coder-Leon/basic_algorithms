@@ -41,7 +41,7 @@ public class Code_01_BubbleSort {
         }
         System.out.println(succeed ? "Bingo!!!" : "Shit!!!");
 
-        int arr[] = generateRandomArray(maxSize, maxValue);
+        int[] arr = generateRandomArray(maxSize, maxValue);
         printArray(arr);
         bubbleSort(arr);
         printArray(arr);

@@ -24,7 +24,7 @@ public class Code_04_MergeSort {
         int p1 = left;
         int p2 = middle + 1;
         while (p1 <= middle && p2 <= right) {
-            help[i++] = arr[p1] < arr[p2] ? arr[p1++] : arr[p2++] ;
+            help[i++] = arr[p1] <= arr[p2] ? arr[p1++] : arr[p2++] ;
         }
         while (p1 <= middle) {
             help[i++] = arr[p1++];
@@ -57,7 +57,7 @@ public class Code_04_MergeSort {
         }
         System.out.println(succeed ? "Bingo!!!" : "Shit!!!");
 
-        int arr[] = generateRandomArray(maxSize, maxValue);
+        int[] arr = generateRandomArray(maxSize, maxValue);
         System.out.println(Arrays.toString(arr));
         mergeSort(arr);
         System.out.println(Arrays.toString(arr));
