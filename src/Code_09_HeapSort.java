@@ -61,7 +61,7 @@ public class Code_09_HeapSort {
                 break;
             }
         }
-        System.out.println(succeed ? "Bingo!!!" : "Shit!!!");
+        System.out.println(succeed ? "Bingo!!" : "Shit!!");
 
         int[] arr = generateRandomArray(maxSize, maxValue);
         System.out.println(Arrays.toString(arr));
