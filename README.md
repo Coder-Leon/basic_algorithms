@@ -42,9 +42,9 @@
 
 - 18 猫狗队列问题。问题描述：
   > 用户可以调用add方法将cat类或dog类的实例放入队列中；
-  > pollAll方法，将队列中所有的实例按照进队列的先后顺序依次弹出；
-  > pollDog方法，将队列中dog类的实例按照进队列的先后顺序依次弹出；
-  > pollCat方法，将队列中cat类的实例按照进队列的先后顺序依次弹出；
-  > isEmpty方法，检查队列中是否还有dog或cat的实例； 
-  > isDogEmpty方法，检查队列中是否有dog类的实例；
-  > isCatEmpty方法，检查队列中是否有cat类的实例。
+  pollAll方法，将队列中所有的实例按照进队列的先后顺序依次弹出；
+  pollDog方法，将队列中dog类的实例按照进队列的先后顺序依次弹出；
+  pollCat方法，将队列中cat类的实例按照进队列的先后顺序依次弹出；
+  isEmpty方法，检查队列中是否还有dog或cat的实例； 
+  isDogEmpty方法，检查队列中是否有dog类的实例；
+  isCatEmpty方法，检查队列中是否有cat类的实例。
